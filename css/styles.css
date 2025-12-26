@@ -13232,7 +13232,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 .modal-content.whatsapp-modal {
   background:
     linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-    url("/assets/img/modal-bg.jpg") center/cover no-repeat;
+    url("../assets/img/modal-bg.jpg") center/cover no-repeat;
   color: #fff;
   border-radius: 12px;
 }
@@ -13258,7 +13258,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   justify-content: center;
   width: 300px;
   height: 120px;
-  background: url("/assets/img/brochure-scroll.png") center/contain no-repeat;
+  background: url("../assets/img/brochure-scroll.png") center/contain no-repeat;
   text-decoration: none;
   position: relative;
   margin-top: 25px;
@@ -13291,7 +13291,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 .scroll-paper {
   width: 481px;
   height: 519px;
-  background: url("/assets/img/scroll-form-bg.png") center/contain no-repeat;
+  background: url("../assets/img/scroll-form-bg.png") center/contain no-repeat;
   padding-top: 120px;
   /* aligns content perfectly on your image */
   text-align: center;
@@ -13549,7 +13549,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 .video-cover {
   width: 100%;
   height: 70vh;
-  background: url("/assets/img/amenities/video-thumb.jpg") center/cover no-repeat;
+  background: url("../assets/img/amenities/video-thumb.jpg") center/cover no-repeat;
   position: relative;
   cursor: pointer;
   border-radius: 20px;
@@ -13598,7 +13598,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   .video-cover {
     width: 100%;
     height: 70vh;
-    background: url("/assets/img/amenities/video-thumb.jpg") center/cover no-repeat;
+    background: url("../assets/img/amenities/video-thumb.jpg") center/cover no-repeat;
     position: relative;
     cursor: pointer;
   }
