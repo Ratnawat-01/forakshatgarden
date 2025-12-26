@@ -13291,6 +13291,8 @@ section#contact form#contactForm :-ms-input-placeholder {
 .scroll-paper {
   width: 481px;
   height: 519px;
+  height: 519px;
+  /* TO CHANGE BACKGROUND IMAGE (DESKTOP): Update the url below */
   background: url("../assets/img/scroll-form-bg.png") center/contain no-repeat;
   padding-top: 120px;
   /* aligns content perfectly on your image */
@@ -13432,8 +13434,9 @@ section#contact form#contactForm :-ms-input-placeholder {
     margin: 0 auto;
 
     /* Force background visibility on mobile */
-    background: url("../assets/img/scroll-form-bg.png") center no-repeat;
-    background-size: 100% 100%;
+    /* TO CHANGE BACKGROUND IMAGE: Update the url('../path/to/image.png') below */
+    background: url("../assets/img/scroll-form-bg.png") center no-repeat !important;
+    background-size: 100% 100% !important;
     /* Stretch to fill */
   }
 
@@ -13477,10 +13480,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 }
 
-.scroll-paper {
-  padding-top: 135px;
-  /* desktop alignment fix */
-}
+
 
 .scroll-paper * {
   box-sizing: border-box;
