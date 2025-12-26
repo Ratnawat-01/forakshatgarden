@@ -13430,6 +13430,11 @@ section#contact form#contactForm :-ms-input-placeholder {
     padding-top: 115px;
     /* PUSH CONTENT DOWN */
     margin: 0 auto;
+
+    /* Force background visibility on mobile */
+    background: url("../assets/img/scroll-form-bg.png") center no-repeat;
+    background-size: 100% 100%;
+    /* Stretch to fill */
   }
 
   .scroll-title {
