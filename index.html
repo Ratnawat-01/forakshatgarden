@@ -95,8 +95,13 @@
                 <option>Other</option>
               </select>
 
-              <input type="text" id="waDate" placeholder="Event Date" onfocus="(this.type='date')"
-                onblur="(this.type='text')">
+              <div class="date-row">
+                <input type="text" id="waFromDate" placeholder="From" onfocus="(this.type='date')"
+                  onblur="(this.type='text')">
+                <input type="text" id="waToDate" placeholder="To" onfocus="(this.type='date')"
+                  onblur="(this.type='text')">
+              </div>
+
 
               <button onclick="sendWhatsApp()">Send</button>
             </div>
@@ -112,9 +117,10 @@
         function sendWhatsApp() {
           const name = document.getElementById("waName").value.trim();
           const eventType = document.getElementById("waEvent").value;
-          const date = document.getElementById("waDate").value;
+          const fromDate = document.getElementById("waFromDate").value;
+          const toDate = document.getElementById("waToDate").value;
 
-          if (!name || !eventType || !date) {
+          if (!name || !eventType || !fromDate || !toDate) {
             alert("Please fill all details before continuing.");
             return;
           }
@@ -128,7 +134,8 @@
             `Hello Akshat Marriage Garden,%0A%0A` +
             `Name: ${name}%0A` +
             `Event Type: ${eventType}%0A` +
-            `Event Date: ${date}%0A%0A` +
+            `Booking From: ${fromDate}%0A` +
+            `Booking To: ${toDate}%0A%0A` +
             `Please share availability and details.%0A%0A` +
             `Brochure: ${brochureLink}`;
 

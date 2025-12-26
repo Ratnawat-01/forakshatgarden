@@ -13426,55 +13426,75 @@ section#contact form#contactForm :-ms-input-placeholder {
   }
 
   .scroll-paper {
-    width: 290px;
-    height: 390px;
-    /* slightly taller */
-    padding-top: 115px;
-    /* PUSH CONTENT DOWN */
+    width: min(360px, 90vw);
+    /* Responsive width capped at 360px */
+    aspect-ratio: 481 / 519;
+    /* Maintain exact image ratio */
+    height: auto;
+    padding-top: 32%;
+    /* Scales with width (approx 32% of width) */
     margin: 0 auto;
 
-    /* Force background visibility on mobile */
-    /* TO CHANGE BACKGROUND IMAGE: Update the url('../path/to/image.png') below */
     background: url("../assets/img/scroll-form-bg.png") center no-repeat !important;
-    background-size: 100% 100% !important;
-    /* Stretch to fill */
+    background-size: contain !important;
   }
 
   .scroll-title {
-    font-size: 20px;
-    margin-bottom: 14px;
+    font-size: clamp(14px, 4vw, 18px);
+    /* Fluid font */
+    margin-bottom: 2%;
+    /* Fluid margin */
   }
 
+  /* Full width inputs - Reduced to 60% to stay inside scroll edges */
   .scroll-paper input,
   .scroll-paper select {
-    width: 54%;
-    /* more narrow */
-    padding: 6px 8px;
-    /* shorter height */
-    margin: 7px auto;
-    /* tight vertical spacing */
+    width: 60%;
+    padding: 0 4px;
+    /* minimal padding */
+    margin: 1.5% auto;
+    /* Fluid margin */
     background: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.6);
     border-radius: 4px;
-    font-size: 12px;
+    font-size: clamp(10px, 3.5vw, 13px);
+    /* Slightly smaller conservative font */
     color: #000;
     display: block;
+    height: clamp(24px, 8vw, 29px);
+    /* Fluid height */
+  }
+
+  /* Side-by-side date container - Matches 60% width */
+  .date-row {
+    width: 60%;
+    margin: 1.5% auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+  }
+
+  /* Specific style for inputs inside date-row to override Width */
+  .date-row input {
+    width: 48% !important;
+    /* Side by side */
+    margin: 0 !important;
+    /* Remove individual margin */
+    padding: 0 2px;
+    /* tighter padding for dates */
   }
 
 
   .scroll-paper button {
-    width: 44%;
-    /* smaller */
-    padding: 6px;
-    /* shorter */
-    margin: 10px auto 0;
-    /* NO bottom overflow */
-    background: rgba(212, 175, 55, 0.75);
+    width: 40%;
+    padding: 2%;
+    margin: 3% auto 0;
+    background: rgba(212, 175, 55, 0.9);
     color: #000;
     font-weight: 700;
-    font-size: 13px;
+    font-size: clamp(11px, 3.5vw, 13px);
     border: none;
-    border-radius: 20px;
+    border-radius: 15px;
     display: block;
   }
 
