@@ -1,0 +1,178 @@
+/* =========================================
+   1. ANIMATION VARIABLES & UTILITIES
+   ========================================= */
+:root {
+  --anim-duration-short: 0.4s;
+  --anim-duration-normal: 0.8s;
+  --anim-duration-slow: 1.2s;
+  --anim-ease: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* Base class for all scroll animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--anim-duration-normal) var(--anim-ease),
+    transform var(--anim-duration-normal) var(--anim-ease);
+  will-change: opacity, transform;
+}
+
+/* Stagger delays for grid items */
+.animate-delay-100 {
+  transition-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  transition-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  transition-delay: 0.3s;
+}
+
+/* When element becomes visible */
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 
+   Different Animation Types 
+   (Add these classes ALONG with .animate-on-scroll if you want different behaviors)
+*/
+
+/* Fade In (No movement) */
+.anim-fade {
+  transform: none;
+}
+
+/* Scale Up */
+.anim-scale {
+  transform: scale(0.95);
+}
+
+.anim-scale.is-visible {
+  transform: scale(1);
+}
+
+/* Slide from Left */
+.anim-left {
+  transform: translateX(-30px);
+}
+
+.anim-left.is-visible {
+  transform: translateX(0);
+}
+
+/* Slide from Right */
+.anim-right {
+  transform: translateX(30px);
+}
+
+.anim-right.is-visible {
+  transform: translateX(0);
+}
+
+
+/* =========================================
+   2. HOVER EFFECTS (Micro-interactions)
+   ========================================= */
+
+/* Button Hover: Lift + Shadow */
+.btn-hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Hover: Slight Lift + Border Glow */
+.card-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Hover: Zoom (for Gallery) */
+.img-hover-zoom {
+  overflow: hidden;
+  /* container needs this */
+  display: block;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.5s ease;
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+
+/* =========================================
+   3. MOBILE OPTIMIZATIONS
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Reduce movement distance on mobile for subtler feel */
+  .animate-on-scroll {
+    transform: translateY(15px);
+  }
+
+  /* Disable delays on mobile to make scrolling feel faster */
+  [class*="animate-delay-"] {
+    transition-delay: 0s !important;
+  }
+}
+
+/* =========================================
+   4. SMOOTH TEXT REVEAL
+   ========================================= */
+#typewriter-text {
+  /* Ensure the container is visible immediately so it takes up space */
+  opacity: 1;
+  /* Prevent layout shifts */
+  display: inline-block;
+}
+
+.word-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  /* Forces letters to stay together */
+}
+
+.char-reveal {
+  opacity: 0;
+  display: inline-block;
+  white-space: pre;
+  /* Preserve spaces if inside spans */
+  animation: smoothReveal 0.8s cubic-bezier(0.5, 0, 0, 1) forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes smoothReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
