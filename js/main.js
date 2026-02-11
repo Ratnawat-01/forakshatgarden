@@ -129,3 +129,26 @@ function initTypewriterEffect() {
     }
   });
 }
+
+function initMobileMenu() {
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  const offcanvasEl = document.getElementById('offcanvasNavbar');
+
+  if (offcanvasEl && mobileLinks.length > 0) {
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        // We do NOT prevent default, so the anchor jump happens.
+        // We just need to make sure the menu closes.
+
+        let bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
+        if (!bsOffcanvas) {
+          // If instance doesn't exist (rare if opened via button), create it
+          bsOffcanvas = new bootstrap.Offcanvas(offcanvasEl);
+        }
+        bsOffcanvas.hide();
+      });
+    });
+  }
+}
+// Init mobile menu logic
+document.addEventListener('DOMContentLoaded', initMobileMenu);
