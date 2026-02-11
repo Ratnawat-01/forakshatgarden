@@ -13547,150 +13547,10 @@ section#contact form#contactForm :-ms-input-placeholder {
   }
 }
 
-/* Amenities cards */
-.amenity-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 18px;
-  /* curved square */
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-.amenity-card p {
-  margin-top: 8px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* Mobile spacing fix */
-@media (max-width: 768px) {
-  .amenity-card p {
-    font-size: 13px;
-  }
-}
-
-/* Full-width video thumbnail */
-.video-cover {
-  width: 100%;
-  height: 70vh;
-  background: url("../assets/img/amenities/video-thumb.jpg") center/cover no-repeat;
-  position: relative;
-  cursor: pointer;
-  border-radius: 20px;
-  /* Added curve */
-  overflow: hidden;
-  /* Ensure content stays within curve */
-}
-
-@media (max-width: 768px) {
-  .video-cover {
-    height: auto;
-    /* remove fixed height */
-    aspect-ratio: 16 / 9;
-    /* FORCE rectangle */
-  }
-}
-
-/* Dark overlay */
-.video-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
 
 
-/* Text */
-.video-overlay {
-  color: #fff;
-  /* fallback */
-  text-align: center;
-}
 
-.video-overlay p {
-  font-size: 18px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-/* Mobile optimization */
-@media (max-width: 768px) {
-  .video-cover {
-    width: 100%;
-    height: 70vh;
-    background: url("../assets/img/amenities/video-thumb.jpg") center/cover no-repeat;
-    position: relative;
-    cursor: pointer;
-  }
-
-  @media (max-width: 768px) {
-    .play-text {
-      font-size: 14px;
-    }
-  }
-
-
-
-  .video-overlay p {
-    font-size: 15px;
-  }
-}
-
-/* PURE CSS PLAY TRIANGLE — NO BLUE POSSIBLE */
-.play-triangle {
-  width: 0;
-  height: 0;
-  border-left: 40px solid rgba(255, 255, 255, 0.75);
-  border-top: 25px solid transparent;
-  border-bottom: 25px solid transparent;
-  margin-bottom: 12px;
-}
-
-/* Text below play icon */
-.play-text {
-  color: rgba(255, 255, 255, 0.85) !important;
-  /* FORCE WHITE */
-  font-size: 16px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-
-/* Gallery grid */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  /* 4x4 on phone */
-  gap: 6px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-/* Tablet */
-@media (min-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-
-/* Desktop */
-@media (min-width: 992px) {
-  .gallery-grid {
-    grid-template-columns: repeat(8, 1fr);
-  }
-}
 
 .gallery-viewer-img {
   max-width: 100%;
@@ -13845,34 +13705,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   }
 }
 
-/* Location Benefits */
-.location-benefits h4 {
-  font-weight: 700;
-  text-transform: uppercase;
-}
 
-.location-box {
-  background: #fff;
-  border-radius: 8px;
-  padding: 14px 10px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  transition: transform 0.25s ease;
-}
-
-.location-box p {
-  margin: 6px 0 0;
-  font-size: 14px;
-  line-height: 1.3;
-}
-
-.location-box:hover {
-  transform: translateY(-4px);
-}
-
-.mb-extra {
-  margin-bottom: 80px;
-  /* adjust if needed */
-}
 
 /* Footer */
 .footer-dark {
@@ -13921,4 +13754,204 @@ section#contact form#contactForm :-ms-input-placeholder {
   color: #d4af37;
   /* same subtle gold as icons */
   text-decoration: underline;
+}
+
+/* =========================================
+   PREMIUM AMENITIES & HIGHLIGHTS
+   ========================================= */
+.text-gold {
+  color: #c5a047 !important;
+}
+
+.divider-gold {
+  border-top: 2px solid #c5a047;
+  width: 100px;
+  margin: 3rem auto;
+  opacity: 0.7;
+}
+
+/* Premium Card */
+.premium-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(197, 160, 71, 0.1);
+}
+
+.premium-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(197, 160, 71, 0.15);
+  border-color: rgba(197, 160, 71, 0.4);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: #c5a047;
+  margin-bottom: 1.5rem;
+}
+
+.premium-card h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.premium-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.premium-card li {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  color: #555;
+  display: flex;
+  align-items: flex-start;
+}
+
+.premium-card li i {
+  margin-top: 4px;
+  /* align check icon with text */
+}
+
+/* Highlight Card */
+.highlight-card {
+  text-align: center;
+  padding: 2rem;
+  background: #fdfbf7;
+  /* Very light cream */
+  border-radius: 12px;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.highlight-card:hover {
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+}
+
+.highlight-icon {
+  font-size: 2rem;
+  color: #c5a047;
+  margin-bottom: 1rem;
+}
+
+.highlight-card h5 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.highlight-card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   GALLERY IMPROVEMENTS
+   ========================================= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#loadMoreGallery {
+  background: linear-gradient(135deg, #c5a047, #d4af37);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+}
+
+#loadMoreGallery:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(197, 160, 71, 0.4);
+}
+
+#loadMoreGallery:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .premium-card {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .gallery-grid img {
+    height: 150px;
+  }
+}
+
+/* =========================================
+   VIDEO SECTION
+   ========================================= */
+.video-container {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 4px solid #fff;
+  background: #000;
+  /* Loading placeholder */
+}
+
+/* Ensure ratio classes work if not in bootstrap build (usually are) */
+.ratio {
+  position: relative;
+  width: 100%;
+}
+
+.ratio::before {
+  display: block;
+  padding-top: var(--bs-aspect-ratio);
+  content: "";
+}
+
+.ratio-16x9 {
+  --bs-aspect-ratio: 56.25%;
+}
+
+.ratio>* {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
