@@ -423,6 +423,7 @@ button,
 [type=reset],
 [type=submit] {
   -webkit-appearance: button;
+  appearance: button;
 }
 
 button:not(:disabled),
@@ -484,6 +485,7 @@ legend+* {
 [type=search] {
   outline-offset: -2px;
   -webkit-appearance: textfield;
+  appearance: textfield;
 }
 
 /* rtl:raw:
@@ -502,9 +504,10 @@ legend+* {
   padding: 0;
 }
 
-::file-selector-button {
+::-webkit-file-upload-button {
   font: inherit;
   -webkit-appearance: button;
+  appearance: button;
 }
 
 output {
@@ -14033,65 +14036,85 @@ a.dark-box {
 /* =========================================
    MOBILE OFFCANVAS MENU
    ========================================= */
-.offcanvas {
-  background: linear-gradient(135deg, #1c1c1c 0%, #2b2b2b 100%);
-  color: #fff;
+.offcanvas-end {
+  width: 100vw !important;
+  /* Full width */
+  border-left: none;
+  background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+  /* Deep dark premium bg */
 }
 
 .offcanvas-header .btn-close {
   filter: invert(1);
-  opacity: 0.8;
+  opacity: 1;
+  background-size: 1.5rem;
+  /* Larger close button */
 }
 
 .mobile-nav-list {
-  padding-top: 2rem;
+  padding-top: 0;
+  width: 100%;
 }
 
 .mobile-link {
+  font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
-  font-weight: 600;
-  color: #fff !important;
-  /* Force white initially */
+  /* Large tap-friendly */
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8) !important;
   padding: 15px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  text-decoration: none;
   transition: all 0.3s ease;
   display: block;
+  letter-spacing: 1px;
+}
+
+/* Active Highlight (will be toggled by JS) */
+.mobile-link.active-section {
+  color: #c5a047 !important;
+  font-weight: 700;
+  transform: translateX(-10px) scale(1.05);
+  /* Slight move left + scale */
 }
 
 .mobile-link:hover,
-.mobile-link:focus,
-.mobile-link:active {
+.mobile-link:focus {
   color: #c5a047 !important;
   /* Gold on hover */
-  transform: translateX(10px);
-  /* Slide effect */
-  padding-left: 10px;
+  transform: translateX(-10px) scale(1.05);
+  /* Slide left + grow */
+  text-shadow: 0 0 10px rgba(197, 160, 71, 0.3);
 }
 
-/* Staggered Fade In Animation */
-@keyframes fadeInUp {
+/* Social Icons in Menu */
+.social-icons-menu a {
+  transition: transform 0.3s, color 0.3s;
+  display: inline-block;
+}
+
+.social-icons-menu a:hover {
+  color: #c5a047 !important;
+  transform: translateY(-3px);
+}
+
+/* Staggered Fade In Right Animation */
+@keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(30px);
+    /* Start from right */
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
 .fade-in-item {
   opacity: 0;
   /* Hidden initially */
-  animation: fadeInUp 0.5s ease forwards;
+  animation: fadeInRight 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-/* Offcanvas width on mobile */
-@media (max-width: 991px) {
-  .offcanvas {
-    width: 85% !important;
-    /* Not full width but mostly */
-    border-left: 1px solid #c5a047;
-  }
-}
+/* Ensure no scroll on body when menu open (Bootstrap does this usually, but good to ensure) */

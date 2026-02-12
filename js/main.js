@@ -134,21 +134,46 @@ function initMobileMenu() {
   const mobileLinks = document.querySelectorAll('.mobile-link');
   const offcanvasEl = document.getElementById('offcanvasNavbar');
 
+  // 1. Close menu on click
   if (offcanvasEl && mobileLinks.length > 0) {
     mobileLinks.forEach(link => {
       link.addEventListener('click', (e) => {
-        // We do NOT prevent default, so the anchor jump happens.
-        // We just need to make sure the menu closes.
-
-        let bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
-        if (!bsOffcanvas) {
-          // If instance doesn't exist (rare if opened via button), create it
-          bsOffcanvas = new bootstrap.Offcanvas(offcanvasEl);
-        }
+        // Allow default anchor jump, just close the menu
+        const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl) || new bootstrap.Offcanvas(offcanvasEl);
         bsOffcanvas.hide();
       });
     });
   }
+
+  // 2. Active Section Highlighting
+  const sections = document.querySelectorAll('section'); // Assuming sections have IDs matching hrefs
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '-50% 0px -50% 0px', // Active when section is in middle of viewport
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Remove active class from all
+        mobileLinks.forEach(link => link.classList.remove('active-section'));
+
+        // Add active class to corresponding link
+        const id = entry.target.getAttribute('id');
+        const activeLink = document.querySelector(`.mobile-link[href="#${id}"]`);
+        if (activeLink) {
+          activeLink.classList.add('active-section');
+        }
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
 }
+
 // Init mobile menu logic
 document.addEventListener('DOMContentLoaded', initMobileMenu);

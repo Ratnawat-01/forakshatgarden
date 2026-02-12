@@ -50,29 +50,53 @@
 
   <!-- Mobile Offcanvas Menu (Moved outside Nav for better positioning) -->
   <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar"
-    aria-labelledby="offcanvasNavbarLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title text-gold fw-bold" id="offcanvasNavbarLabel">AKSHAT GARDEN</h5>
+    aria-labelledby="offcanvasNavbarLabel"
+    style="width: 100vw !important; border-left: none; background-color: #1a1a1a !important;">
+    <div class="offcanvas-header justify-content-between">
+      <h5 class="offcanvas-title text-gold fw-bold" id="offcanvasNavbarLabel"
+        style="font-family: 'Cinzel', serif; letter-spacing: 2px;">AKSHAT GARDEN</h5>
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
-      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mobile-nav-list">
+    <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
+      <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 mobile-nav-list text-center">
+        <!-- 1. Premium Amenities -->
         <li class="nav-item fade-in-item" style="animation-delay: 0.1s;">
-          <a class="nav-link mobile-link" href="#page-top">Home</a>
-        </li>
-        <li class="nav-item fade-in-item" style="animation-delay: 0.2s;">
           <a class="nav-link mobile-link" href="#celebration">Premium Amenities</a>
         </li>
-        <li class="nav-item fade-in-item" style="animation-delay: 0.3s;">
-          <a class="nav-link mobile-link" href="#highlights">Event Highlights</a>
+        <!-- 2. Venue Video -->
+        <li class="nav-item fade-in-item" style="animation-delay: 0.15s;">
+          <a class="nav-link mobile-link" href="#video">Experience the Venue</a>
         </li>
-        <li class="nav-item fade-in-item" style="animation-delay: 0.4s;">
+        <!-- 3. Gallery -->
+        <li class="nav-item fade-in-item" style="animation-delay: 0.2s;">
           <a class="nav-link mobile-link" href="#gallery">Gallery</a>
         </li>
-        <li class="nav-item fade-in-item" style="animation-delay: 0.5s;">
+        <!-- 4. Event Highlights -->
+        <li class="nav-item fade-in-item" style="animation-delay: 0.25s;">
+          <a class="nav-link mobile-link" href="#highlights">Event Highlights</a>
+        </li>
+        <!-- 5. About -->
+        <li class="nav-item fade-in-item" style="animation-delay: 0.3s;">
+          <a class="nav-link mobile-link" href="#about">About</a>
+        </li>
+        <!-- 6. Contact -->
+        <li class="nav-item fade-in-item" style="animation-delay: 0.35s;">
           <a class="nav-link mobile-link" href="#contact">Contact</a>
         </li>
       </ul>
+
+      <!-- Optional: Social links or small footer in menu -->
+      <div class="mt-4 fade-in-item" style="animation-delay: 0.4s;">
+        <div class="social-icons-menu">
+          <a href="https://www.instagram.com/akshatmarriage/" target="_blank" class="text-white me-3"><i
+              class="fab fa-instagram fa-lg"></i></a>
+          <a href="https://www.facebook.com/share/16tJGa1YYL/?mibextid=wwXIfr" target="_blank"
+            class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+          <a href="https://www.youtube.com/@IndoreMarriageGardens" target="_blank" class="text-white"><i
+              class="fab fa-youtube fa-lg"></i></a>
+        </div>
+      </div>
+
     </div>
   </div>
   <!-- Masthead-->
