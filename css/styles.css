@@ -14034,67 +14034,169 @@ a.dark-box {
 }
 
 /* =========================================
-   MOBILE OFFCANVAS MENU
+   MOBILE OFFCANVAS MENU (PREMIUM DRAWER)
    ========================================= */
-.offcanvas-end {
-  width: 100vw !important;
-  /* Full width */
-  border-left: none;
-  background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+.premium-drawer {
+  width: 75% !important;
+  /* 75% width on mobile */
+  background: linear-gradient(135deg, #000000 0%, #0a0f1c 100%);
   /* Deep dark premium bg */
+  border-left: 1px solid rgba(197, 160, 71, 0.2);
+  /* Subtle gold border */
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
+  border-radius: 20px 0 0 20px;
+  /* Rounded left edges */
+}
+
+/* Backdrop Blur */
+.offcanvas-backdrop.show {
+  opacity: 0.6;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
 .offcanvas-header .btn-close {
   filter: invert(1);
+  opacity: 0.8;
+  background-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.offcanvas-header .btn-close:hover {
   opacity: 1;
-  background-size: 1.5rem;
-  /* Larger close button */
+  transform: rotate(90deg);
 }
 
 .mobile-nav-list {
-  padding-top: 0;
+  padding-top: 1rem;
   width: 100%;
 }
 
-.mobile-link {
+.drawer-nav-link {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.5rem;
-  /* Large tap-friendly */
+  font-size: 1.1rem;
+  /* Elegant size */
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.8) !important;
-  padding: 15px 0;
+  color: rgba(255, 255, 255, 0.7) !important;
+  padding: 12px 0 12px 30px !important;
+  /* Left padding */
   text-decoration: none;
   transition: all 0.3s ease;
   display: block;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  border-left: 3px solid transparent;
 }
 
-/* Active Highlight (will be toggled by JS) */
-.mobile-link.active-section {
+/* Hover & Active State */
+.drawer-nav-link:hover,
+.drawer-nav-link.active-section {
   color: #c5a047 !important;
-  font-weight: 700;
-  transform: translateX(-10px) scale(1.05);
-  /* Slight move left + scale */
+  /* Gold */
+  background: linear-gradient(90deg, rgba(197, 160, 71, 0.05) 0%, transparent 100%);
+  transform: translateX(5px);
+  /* Slide right */
+  border-left-color: #c5a047;
+  text-shadow: 0 0 15px rgba(197, 160, 71, 0.4);
 }
 
-.mobile-link:hover,
-.mobile-link:focus {
+/* Brochure Button Styled Item */
+.brochure-link-item {
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 10px 15px !important;
+  border: 1px solid rgba(197, 160, 71, 0.5);
+  border-radius: 8px;
   color: #c5a047 !important;
-  /* Gold on hover */
-  transform: translateX(-10px) scale(1.05);
-  /* Slide left + grow */
-  text-shadow: 0 0 10px rgba(197, 160, 71, 0.3);
+  text-align: center;
+  font-size: 1rem;
+  background: rgba(197, 160, 71, 0.05);
+  transition: all 0.3s ease;
+}
+
+.brochure-link-item:hover {
+  background: #c5a047;
+  color: #000 !important;
+  box-shadow: 0 5px 15px rgba(197, 160, 71, 0.3);
+  transform: translateY(-2px);
 }
 
 /* Social Icons in Menu */
 .social-icons-menu a {
-  transition: transform 0.3s, color 0.3s;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   display: inline-block;
+  opacity: 0.9;
+  text-decoration: none;
 }
 
 .social-icons-menu a:hover {
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+/* Instagram Gradient Text */
+.instagram-icon i {
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  /* fallback */
+  display: inline-block;
+}
+
+/* Facebook Blue */
+.facebook-icon i {
+  color: #1877F2;
+}
+
+.facebook-icon:hover i {
+  filter: brightness(1.1);
+}
+
+/* YouTube Red */
+.youtube-icon i {
+  color: #FF0000;
+}
+
+.youtube-icon:hover i {
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+/* WhatsApp Green */
+.whatsapp-icon i {
+  color: #25D366;
+}
+
+.whatsapp-icon:hover i {
+  color: #25D366;
+  text-shadow: 0 0 10px rgba(37, 211, 102, 0.4);
+}
+
+/* Responsive adjustments */
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .premium-drawer {
+    width: 40% !important;
+    /* Smaller on tablets */
+  }
+}
+
+/* Update Menu Toggler to use brand colors */
+.navbar-toggler {
   color: #c5a047 !important;
-  transform: translateY(-3px);
+  border-color: rgba(197, 160, 71, 0.5) !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(197, 160, 71, 0.25) !important;
+}
+
+.navbar-toggler i {
+  color: #c5a047 !important;
 }
 
 /* Staggered Fade In Right Animation */
