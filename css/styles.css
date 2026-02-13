@@ -14118,3 +14118,95 @@ a.dark-box {
 }
 
 /* Ensure no scroll on body when menu open (Bootstrap does this usually, but good to ensure) */
+
+/* ========================
+   Video Section Styles
+   ======================== */
+.video-thumbnail-container {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 4px solid #fff;
+}
+
+.video-thumbnail-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.video-thumb-img {
+  transition: transform 0.6s ease;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.video-thumbnail-container:hover .video-thumb-img {
+  transform: scale(1.05);
+}
+
+.play-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
+
+.video-thumbnail-container:hover .play-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.play-btn-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 200, 0, 0.9);
+  /* Gold */
+  box-shadow: 0 0 0 0 rgba(255, 200, 0, 0.7);
+  animation: pulse-gold 2s infinite;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.video-thumbnail-container:hover .play-btn-wrapper {
+  transform: scale(1.1);
+  background: #ffc800;
+}
+
+.play-icon {
+  font-size: 2rem;
+  margin-left: 5px;
+  /* Visual center adjustment */
+  color: #fff;
+}
+
+@keyframes pulse-gold {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 200, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 20px rgba(255, 200, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 200, 0, 0);
+  }
+}
+
+/* Modal Styles */
+.video-close-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.video-close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}

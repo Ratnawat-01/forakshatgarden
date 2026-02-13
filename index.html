@@ -260,13 +260,25 @@
       </div>
 
       <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="video-container animate-on-scroll anim-scale">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/watch?v=WJ1kNau1jz0" title="Akshat Marriage Garden Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen loading="lazy"></iframe>
+        <div class="col-lg-8">
+          <!-- Custom Video Thumbnail Container -->
+          <div
+            class="video-thumbnail-container position-relative rounded-3 shadow-lg overflow-hidden animate-on-scroll anim-scale"
+            data-bs-toggle="modal" data-bs-target="#videoModal">
+
+            <!-- Thumbnail Image (Lazy Loaded) -->
+            <img src="https://img.youtube.com/vi/Yj7gkX_qKXc/maxresdefault.jpg" class="w-100 d-block video-thumb-img"
+              alt="Experience Akshat Garden" loading="lazy">
+
+            <!-- Play Button Overlay -->
+            <div
+              class="play-overlay d-flex align-items-center justify-content-center position-absolute top-0 start-0 w-100 h-100">
+              <div class="play-btn-wrapper">
+                <i class="fas fa-play text-white play-icon"></i>
+                <div class="ripple-effect"></div>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -786,6 +798,26 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+  <!-- Video Modal -->
+  <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body p-0 position-relative">
+          <!-- Close Button -->
+          <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-3 video-close-btn"
+            data-bs-dismiss="modal" aria-label="Close"></button>
+
+          <!-- Video Iframe Container -->
+          <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-lg border border-gold">
+            <iframe id="youtube-video" src="" title="Akshat Garden Venue Tour"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <script src="js/main.js"></script>

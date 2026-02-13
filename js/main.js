@@ -177,3 +177,27 @@ function initMobileMenu() {
 
 // Init mobile menu logic
 document.addEventListener('DOMContentLoaded', initMobileMenu);
+
+/* =========================================
+   6. VIDEO MODAL LOGIC
+   ========================================= */
+document.addEventListener('DOMContentLoaded', () => {
+  const videoModal = document.getElementById('videoModal');
+  const videoIframe = document.getElementById('youtube-video');
+
+  // YouTube Embed URL with Autoplay, Mute (required for autoplay), and Playsinline
+  const videoSrc = 'https://www.youtube.com/embed/Yj7gkX_qKXc?autoplay=1&mute=1&playsinline=1&rel=0';
+
+  if (videoModal && videoIframe) {
+    // When modal opens, inject src to start video
+    videoModal.addEventListener('show.bs.modal', () => {
+      videoIframe.src = videoSrc;
+    });
+
+    // When modal closes, remove src to stop video
+    videoModal.addEventListener('hide.bs.modal', () => {
+      videoIframe.src = '';
+    });
+  }
+});
+
