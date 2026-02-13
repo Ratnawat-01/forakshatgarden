@@ -13449,10 +13449,10 @@ section#contact form#contactForm :-ms-input-placeholder {
     /* Fluid margin */
   }
 
-  /* Full width inputs - Reduced to 60% to stay inside scroll edges */
+  /* Full width inputs - Reduced to 50% to stay inside scroll edges */
   .scroll-paper input,
   .scroll-paper select {
-    width: 60%;
+    width: 50%;
     padding: 0 4px;
     /* minimal padding */
     margin: 1.5% auto;
@@ -13468,9 +13468,9 @@ section#contact form#contactForm :-ms-input-placeholder {
     /* Fluid height */
   }
 
-  /* Side-by-side date container - Matches 60% width */
+  /* Side-by-side date container - Matches 50% width */
   .date-row {
-    width: 60%;
+    width: 50%;
     margin: 1.5% auto;
     display: flex;
     justify-content: space-between;
