@@ -136,10 +136,12 @@
               </select>
 
               <div class="date-row">
-                <input type="text" id="waFromDate" placeholder="From" onfocus="(this.type='date')"
-                  onblur="(this.type='text')">
-                <input type="text" id="waToDate" placeholder="To" onfocus="(this.type='date')"
-                  onblur="(this.type='text')">
+                <input type="text" id="waFromDate" placeholder="From"
+                  onfocus="(this.type='date'); try{this.showPicker();}catch(e){}"
+                  onblur="if(!this.value)this.type='text'">
+                <input type="text" id="waToDate" placeholder="To"
+                  onfocus="(this.type='date'); try{this.showPicker();}catch(e){}"
+                  onblur="if(!this.value)this.type='text'">
               </div>
 
 
