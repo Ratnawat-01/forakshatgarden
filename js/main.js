@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const videoIframe = document.getElementById('youtube-video');
 
   // YouTube Embed URL with Autoplay, Mute (required for autoplay), and Playsinline
-  const videoSrc = 'https://www.youtube.com/embed/Yj7gkX_qKXc?autoplay=1&mute=1&playsinline=1&rel=0';
+  const videoSrc = 'https://www.youtube.com/embed/smBqm-VkmyQ?autoplay=1&mute=0&playsinline=1&rel=0';
 
   if (videoModal && videoIframe) {
     // When modal opens, inject src to start video
